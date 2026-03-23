@@ -1,54 +1,175 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Школьный проект</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50 px;
-            background-color: #f0f0f0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #20B2AA 0%, #2E8B57 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
         }
-        .container {
+
+        /* Карточка с контентом */
+        .card {
             background: white;
-            padding: 30 px;
-            border-radius: 15 px;
-            max-width: 600 px;
-            margin: 0 auto;
-            box-shadow: 0 4 px 10 px rgba (0,0,0,0.1);
+            max-width: 650px;
+            width: 100%;
+            border-radius: 25px;
+            padding: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: transform 0.3s ease;
         }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Заголовок */
         h1 {
-            color: #333;
+            color: #2E8B57;
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            font-weight: 600;
         }
-        .button {
+
+        /* Подзаголовок / описание */
+        .subtitle {
+            color: #5a6e6a;
+            font-size: 1rem;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #20B2AA;
             display: inline-block;
-            padding: 15 px 30 px;
-            font-size: 18 px;
-            background-color: #4CAF50;
+        }
+
+        /* Основной текст описания */
+        .description {
+            color: #333;
+            line-height: 1.7;
+            margin: 25px 0;
+            font-size: 1rem;
+        }
+
+        /* Кнопка скачивания */
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135 deg, #20B2AA, #2E8B57);
             color: white;
+            font-size: 1.2 rem;
+            font-weight: 600;
+            padding: 14 px 35 px;
+            border-radius: 50 px;
             text-decoration: none;
-            border-radius: 8 px;
-            margin-top: 20 px;
-            transition: background 0.3 s;
+            margin: 20px 0;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(32, 178, 170, 0.4);
+            border: none;
+            cursor: pointer;
         }
-        .button:hover {
-            background-color: #45a049;
+
+        .download-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8 px 25 px rgba  (32, 178, 170, 0.6);
         }
+
+        /* Блок с характеристиками */
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 30 px;
+            flex-wrap: wrap;
+            margin: 30 px 0 20 px;
+        }
+
+        .feature {
+            background: #f0fdfa;
+            padding: 12 px 18 px;
+            border-radius: 20 px;
+            font-size: 0.9 rem;
+            color: #2E8B57;
+            font-weight: 500;
+        }
+
+        /* Примечание под кнопкой */
         .note {
+            font-size: 0.75 rem;
+            color: #8aa09b;
             margin-top: 20 px;
-            font-size: 12 px;
-            color: #777;
+            background: #f9f9f9;
+            display: inline-block;
+            padding: 8 px 16 px;
+            border-radius: 20 px;
+        }
+
+        /* Автор и дата */
+        .footer {
+            margin-top: 30 px;
+            padding-top: 20 px;
+            border-top: 1 px solid #e0e7e5;
+            color: #8aa09b;
+            font-size: 0.8 rem;
+        }
+
+        /* Адаптация для телефонов */
+        @media (max-width: 500 px) {
+            .card {
+                padding: 25 px;
+            }
+            h1 {
+                font-size: 1.8 rem;
+            }
+            .download-btn {
+                font-size: 1 rem;
+                padding: 12 px 25 px;
+            }
+            .features {
+                gap: 15 px;
+            }
+            .feature {
+                padding: 8 px 14 px;
+                font-size: 0.8 rem;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="card">
         <h1>Школьный проект</h1>
-        <p>Это моя игра, созданная для школьного проекта.</p>
-        <p>Нажмите на кнопку ниже, чтобы скачать игру.</p>
-        <a href="projects-1.0-win.zip" class="button" download>📥 Скачать игру (Windows)</a>
-        <p class="note">Если скачивание не началось, нажмите правой кнопкой мыши на кнопку и выберите "Сохранить ссылку как..."</p>
+        <div class="subtitle">Визуальная новелла на Ren'Py</div>
+        
+        <div class="description">
+            Это моя первая игра, созданная в движке Ren'Py для школьного проекта. 
+            Вас ждёт помощь в решении ОГЭ
+        </div>
+
+        <div class="features">
+            <span class="feature">📖 Интересный сюжет</span>
+            <span class="feature">🎨 Оригинальные персонажи</span>
+        </div>
+
+        <!-- КНОПКА СКАЧИВАНИЯ — ПРОВЕРЬТЕ ИМЯ ФАЙЛА! -->
+        <a href="projects-1.0-win.zip" class="download-btn" download>📥 Скачать игру (Windows)</a>
+        
+        <div class="note">
+            💡 Если скачивание не началось — нажмите правой кнопкой мыши на кнопку и выберите «Сохранить ссылку как...»
+        </div>
+        
+        <div class="footer">
+            🎓 Автор: Диана | Школьный проект 2026<br>y
+        </div>
     </div>
 </body>
 </html>
